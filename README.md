@@ -1,10 +1,10 @@
-#Task Overview
+##Task Overview
 
 This project is a full-stack web application built to demonstrate the ability to develop a functional item listing system. The main goal is to implement core technical functionality using modern technologies.
 
 ---
 
-#Features
+##Features
 
 Item Listing – Display a list of items with basic details.
 
@@ -18,7 +18,7 @@ Favorites – Add or edit a list of favorite items.
 
 ---
 
-#Technology Stack
+##Technology Stack
 
 Frontend: ReactJS 
 
