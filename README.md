@@ -1,4 +1,4 @@
-# Simple Listings Web Application
+# Simple Listing Web Application
 
 ## Task Overview
 
