@@ -20,7 +20,7 @@ This project is a full-stack web application built to demonstrate the ability to
 
 - **Frontend:** ReactJS  
 - **Backend:** Ruby on Rails with GraphQL API  
-- **Database:** PostgreSQL
+- **Database:** PostgreSQL, pgAdmin 4
 
 ---
 
@@ -36,11 +36,11 @@ Search and Filter: The top bar includes Search, Categories, Sort By, and an Add 
 Status Indicators: Heart icons mark items designated as 'Favorites.'  
 
 ### 2. Add Product Page
-![Add Product Page](screenshots/addproduct.png)
+![Add Product Page](screenshots/addproduct.png)    
 This page shows the Add Product page, which is used to input details for a new item into the inventory management system.  
 
 ### 3. Edit Product Page
-![Edit Product Page](screenshots/editproduct.png)
+![Edit Product Page](screenshots/editproduct.png)    
 This page displays the Edit Product form, which is used to modify the existing details of an inventory item.    
 Users can finalize changes by clicking the Save button or discard them with the Cancel button.  
 
