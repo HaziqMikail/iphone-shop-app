@@ -23,3 +23,23 @@ This project is a full-stack web application built to demonstrate the ability to
 - **Database:** PostgreSQL
 
 ---
+
+## Screenshots
+
+### 1. Home Page
+![Home Page](screenshots/homepage.png)
+
+### 2. Add Product Page
+![Add Product Page](screenshots/addproduct.png)
+
+### 3. Edit Product Page
+![Edit Product Page](screenshots/editproduct.png)
+
+### 4. Add Favorite
+![Add Favorite](screenshots/favorite.png)
+
+### 5. Search Bar / Search Results
+![Search Bar](screenshots/searchbar1.png)
+![Search Bar](screenshots/searchbar2.png)
+
+---
