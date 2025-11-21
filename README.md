@@ -56,3 +56,4 @@ The first image shows the Category dropdown and the second image shows the Sort 
 
 ### 6. pgAdmin Database
 ![Database](screenshots/pgAdmin.png)
+Database in pgAdmin  
