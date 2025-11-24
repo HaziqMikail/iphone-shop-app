@@ -7,15 +7,15 @@ export const useFavorites = (userId) => {
     variables: { userId },
   });
 
-  const [addFavoriteMutation] = useMutation(ADD_FAVORITE);
-  const [removeFavoriteMutation] = useMutation(REMOVE_FAVORITE);
+  const [addFavoriteMutation] = useMutation(ADD_FAVORITE);// Mutation hook for adding a favorite
+  const [removeFavoriteMutation] = useMutation(REMOVE_FAVORITE);// Mutation hook for removing a favorite
 
-  const favorites = data?.favorites || [];
-  const favoriteIds = favorites.map((f) => f.product.id);
+  const favorites = data?.favorites || [];// List of favorite products
+  const favoriteIds = favorites.map((f) => f.product.id);// List of favorite product IDs
 
   const addFavorite = async (productId) => {
     try {
-      await addFavoriteMutation({ variables: { productId, userId } });
+      await addFavoriteMutation({ variables: { productId, userId } });// Call addFavorite mutation
       refetch();
       return { success: true };
     } catch (err) {
@@ -23,9 +23,9 @@ export const useFavorites = (userId) => {
     }
   };
 
-  const removeFavorite = async (productId) => {
+  const removeFavorite = async (productId) => { // Function to handle removing a favorite
     try {
-      await removeFavoriteMutation({ variables: { productId, userId } });
+      await removeFavoriteMutation({ variables: { productId, userId } });// Call removeFavorite mutation
       refetch();
       return { success: true };
     } catch (err) {
@@ -33,7 +33,7 @@ export const useFavorites = (userId) => {
     }
   };
 
-  const toggleFavorite = async (productId) => {
+  const toggleFavorite = async (productId) => { // Function to handle toggling a favorite
     if (favoriteIds.includes(productId)) {
       return await removeFavorite(productId);
     } else {
@@ -41,7 +41,7 @@ export const useFavorites = (userId) => {
     }
   };
 
-  const isFavorite = (productId) => favoriteIds.includes(productId);
+  const isFavorite = (productId) => favoriteIds.includes(productId); // Function to check if a product is a favorite
 
   return {
     favorites,

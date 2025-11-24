@@ -26,6 +26,7 @@
 #   end
 # end
 
+#Allow React to connect to Rails API
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins '*'  # Allow all domains (for demo purposes)

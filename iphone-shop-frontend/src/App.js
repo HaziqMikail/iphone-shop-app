@@ -13,7 +13,7 @@ import ProductDetail from './components/ProductDetail';
 import ProductForm from './components/ProductForm';
 
 function IPhoneShopApp() {
-  const userId = 'user123';
+  const userId = 'user123'; 
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -37,7 +37,7 @@ function IPhoneShopApp() {
     sortBy,
   });
 
-  const { favorites, favoriteIds, toggleFavorite, removeFavorite } =
+  const { favorites, favoriteIds, toggleFavorite, removeFavorite } = 
     useFavorites(userId);
 
   const handleAddProduct = () => {
@@ -111,12 +111,12 @@ function IPhoneShopApp() {
     );
   }
 
-  return (
+  return ( // Main app component rendering
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <SearchControls
+      <div className="max-w-7xl mx-auto px-4 py-8"> 
+        <SearchControls // Search and filter controls
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
           selectedCategory={selectedCategory}
@@ -129,11 +129,11 @@ function IPhoneShopApp() {
           favoritesCount={favoriteIds.length}
         />
 
-        {showFavorites && (
+        {showFavorites && ( // Favorites list
           <FavoritesList favorites={favorites} onRemove={removeFavorite} />
         )}
 
-        <ProductGrid
+        <ProductGrid // Product grid displaying products
           products={products}
           favoriteIds={favoriteIds}
           onToggleFavorite={toggleFavorite}
@@ -142,7 +142,7 @@ function IPhoneShopApp() {
           onDelete={handleDeleteProduct}
         />
 
-        {selectedProduct && (
+        {selectedProduct && ( // Product detail modal
           <ProductDetail
             product={selectedProduct}
             onClose={() => setSelectedProduct(null)}
@@ -150,7 +150,7 @@ function IPhoneShopApp() {
         )}
 
         {(showAddForm || editingProduct) && (
-          <ProductForm
+          <ProductForm // Form for adding or editing a product
             product={editingProduct}
             onClose={handleCloseForm}
             onSave={handleSaveProduct}
@@ -161,7 +161,7 @@ function IPhoneShopApp() {
   );
 }
 
-export default function App() {
+export default function App() { 
   return (
     <ApolloProvider client={client}>
       <IPhoneShopApp />

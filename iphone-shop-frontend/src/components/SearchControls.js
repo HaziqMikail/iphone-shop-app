@@ -12,18 +12,25 @@ const SearchControls = ({
   onToggleFavorites,
   favoritesCount,
 }) => {
+
+  const handleReset = () => {
+    setSearchTerm('');
+    setSelectedCategory('');
+    setSortBy('');
+  }
+
   return (
     <div className="bg-white rounded-lg shadow p-6 mb-6">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
-        <input
+        <input // Search Input
           type="text"
           placeholder="Search products..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          value={searchTerm} 
+          onChange={(e) => setSearchTerm(e.target.value)} //update state
           className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
-        <select
+        <select // Category Select
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
           className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -37,7 +44,7 @@ const SearchControls = ({
         </select>
 
         <select
-          value={sortBy}
+          value={sortBy} // Sort By Select
           onChange={(e) => setSortBy(e.target.value)}
           className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
@@ -48,7 +55,14 @@ const SearchControls = ({
           <option value="stock">Stock</option>
         </select>
 
-        <button
+        <button // Reset Button
+          onClick={handleReset}
+          className="px-4 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400 transition"
+        >
+          Reset
+        </button>
+
+        <button // Add Product Button
           onClick={onAddProduct}
           className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
         >
@@ -56,7 +70,7 @@ const SearchControls = ({
         </button>
       </div>
 
-      <button
+      <button // Favorites Button
         onClick={onToggleFavorites}
         className="px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition"
       >

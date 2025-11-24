@@ -48,9 +48,9 @@
 #   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
 #   gem "rubocop-rails-omakase", require: false
 
-#   gem 'graphiql-rails'
-#   gem 'graphql'
-#   gem 'rack-cors'
+# gem 'graphiql-rails'   # Tool to test and explore GraphQL APIs in the browser
+# gem 'graphql'          # Adds GraphQL functions (queries, mutations, types)
+# gem 'rack-cors'        # Allows API to be accessed from other domains (CORS)
 # end
 
 source "https://rubygems.org"
@@ -58,11 +58,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.1.1"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
-
-# GraphQL
 gem "graphql", "~> 2.0"
-
-# CORS
 gem "rack-cors"
 
 # Rails defaults

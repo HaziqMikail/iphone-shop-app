@@ -13,12 +13,12 @@ module Mutations
     argument :stock, Integer, required: false
 
     def resolve(**attributes)
-      product = Product.new(attributes)
+      product = Product.new(attributes) # Creates a new Product using the input values
       
       if product.save
-        { product: product, errors: [] }
+        { product: product, errors: [] } # Return the created product and no errors
       else
-        { product: nil, errors: product.errors.full_messages }
+        { product: nil, errors: product.errors.full_messages } # Return no product and the error messages
       end
     end
   end

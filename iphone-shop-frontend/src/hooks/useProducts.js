@@ -2,19 +2,19 @@ import { useQuery, useMutation } from '@apollo/client';
 import { GET_PRODUCTS } from '../graphql/queries';
 import { CREATE_PRODUCT, UPDATE_PRODUCT, DELETE_PRODUCT } from '../graphql/mutations';
 
-export const useProducts = (filters = {}) => {
-  const { loading, error, data, refetch } = useQuery(GET_PRODUCTS, {
+export const useProducts = (filters = {}) => { 
+  const { loading, error, data, refetch } = useQuery(GET_PRODUCTS, { // Query hook to fetch products and categories
     variables: filters,
   });
 
-  const [createProduct] = useMutation(CREATE_PRODUCT);
-  const [updateProduct] = useMutation(UPDATE_PRODUCT);
-  const [deleteProduct] = useMutation(DELETE_PRODUCT);
+  const [createProduct] = useMutation(CREATE_PRODUCT); // Mutation hook for creating a product
+  const [updateProduct] = useMutation(UPDATE_PRODUCT); // Mutation hook for updating a product
+  const [deleteProduct] = useMutation(DELETE_PRODUCT); // Mutation hook for deleting a product
 
-  const handleCreate = async (productData) => {
+  const handleCreate = async (productData) => { // Function to handle product creation
     try {
-      const result = await createProduct({
-        variables: {
+      const result = await createProduct({// Call createProduct mutation
+        variables: {    
           ...productData,
           price: parseFloat(productData.price),
           stock: parseInt(productData.stock),
@@ -27,7 +27,7 @@ export const useProducts = (filters = {}) => {
     }
   };
 
-  const handleUpdate = async (id, productData) => {
+  const handleUpdate = async (id, productData) => { // Function to handle product update
     try {
       const result = await updateProduct({
         variables: {
@@ -44,7 +44,7 @@ export const useProducts = (filters = {}) => {
     }
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id) => { // Function to handle product deletion
     try {
       const result = await deleteProduct({ variables: { id } });
       refetch();
@@ -54,7 +54,11 @@ export const useProducts = (filters = {}) => {
     }
   };
 
-  return {
+  const resetFilters = () => { // Function to reset filters
+    refetch({ search: "", category: "", sort_by: "" });
+  };
+
+  return {  // Return products, categories, loading state, error state, and mutation handlers
     products: data?.products || [],
     categories: data?.categories || [],
     loading,

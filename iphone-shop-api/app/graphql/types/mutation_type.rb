@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# call mutations here from app/graphql/mutations
 
 module Types
   class MutationType < Types::BaseObject

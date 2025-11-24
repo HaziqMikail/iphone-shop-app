@@ -35,7 +35,7 @@ const ProductDetail = ({ product, onClose }) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4"> 
             <div>
               <strong className="text-gray-700">Storage:</strong>
               <p className="text-gray-900">{product.storage || "N/A"}</p>
