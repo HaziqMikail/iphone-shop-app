@@ -1,0 +1,19 @@
+{
+  "name": "iphone-shop-app",
+  "version": "1.0.0",
+  "description": "Full-stack iPhone Shop Management Application with React and GraphQL",
+  "scripts": {
+    "start": "node start-app.js",
+    "server": "node iphone-shop-api/server.js",
+    "client": "npm start --prefix iphone-shop-frontend",
+    "test": "npm test --prefix iphone-shop-frontend -- --watchAll=false"
+  },
+  "keywords": [
+    "react",
+    "graphql",
+    "iphone-shop",
+    "management"
+  ],
+  "author": "",
+  "license": "ISC"
+}

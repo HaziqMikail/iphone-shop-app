@@ -19,8 +19,32 @@ This project is a full-stack web application built to demonstrate the ability to
 ## Technology Stack
 
 - **Frontend:** ReactJS  
-- **Backend:** Ruby on Rails with GraphQL API  
-- **Database:** PostgreSQL, pgAdmin 4
+- **Backend:** Ruby on Rails with GraphQL API (or Node.js GraphQL API)  
+- **Database:** PostgreSQL / Local JSON storage
+
+---
+
+## Getting Started
+
+### One-Command Quick Start
+Start both backend (port 3001) and frontend (port 3000):
+```bash
+npm start
+```
+
+### Run Services Separately
+- **Start Backend:**
+  ```bash
+  npm run server
+  ```
+- **Start Frontend:**
+  ```bash
+  npm run client
+  ```
+- **Run Tests:**
+  ```bash
+  npm test
+  ```
 
 ---
 
